@@ -45,5 +45,13 @@ class OrdinalClassifier(BaseEstimator, ClassifierMixin):
         self.clf.set_params(**params)
         for _,clf in self.clfs.items():
             clf.set_params(**params)
+    
+    def coef_(self):
+        count = 0
+        mean_coefs_ = np.zeros(self.clfs[0].coef_.shape)
+        for k in self.clfs:
+            mean_coefs += self.clfs[k].coef_
+            count += 1
+        return (mean_coefs / count)
 
 
