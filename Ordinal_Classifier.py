@@ -50,8 +50,8 @@ class OrdinalClassifier(BaseEstimator, ClassifierMixin):
         count = 0
         mean_coefs_ = np.zeros(self.clfs[0].coef_.shape)
         for k in self.clfs:
-            mean_coefs += self.clfs[k].coef_
+            mean_coefs_ += self.clfs[k].coef_
             count += 1
-        return (mean_coefs / count)
+        return (mean_coefs_ / count)
 
 
