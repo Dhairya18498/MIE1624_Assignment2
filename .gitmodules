@@ -1,0 +1,3 @@
+[submodule "Ordinal_Classiffier"]
+	path = Ordinal_Classiffier
+	url = https://github.com/mosh98/Ordinal_Classifier.git
